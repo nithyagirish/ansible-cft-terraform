@@ -1,0 +1,62 @@
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+            checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mydevopscoach/my-tf-iac-aws-repo']]])            
+
+          }
+        }
+        
+        stage ("terraform init") {
+            steps {
+                sh ('terraform init') 
+            }
+        }
+        
+        stage ("terraform Validate") {
+            steps {
+                sh ('terraform validate') 
+           }
+        }
+
+        stage ("terraform Plan") {
+            steps {
+                sh ('terraform plan') 
+           }
+        }
+
+        stage ('terraform apply approve')  {
+            echo "Approval for terraform apply"     
+            timeout(time: 7, unit: 'DAYS') {
+            input message: 'Do you approve terraform apply', submitter: 'admin'
+            }
+        }
+        
+        stage ("terraform Apply") {
+            steps {
+                sh ('terraform apply -target=ec2.tf --auto-approve') 
+           }
+        }
+
+        stage ('terraform destroy approve')  {
+            echo "Approval for terraform apply"     
+            timeout(time: 7, unit: 'DAYS') {
+            input message: 'Do you approve terraform destroy', submitter: 'admin'
+            }
+        }
+
+        
+        stage ("terraform Apply") {
+            steps {
+                sh ('terraform destroy -target=ec2.tf --auto-approve') 
+           }
+        }
+
+
+
+
+    }
+}
