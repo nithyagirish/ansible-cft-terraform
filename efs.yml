@@ -6,12 +6,12 @@
   tasks:
      - name: Task # 1 Launch the new EC2 Instance
        efs:
-          group: "{{ security_group1 }}"
-          name : "{{name1}}"
-          performance_mode: "{{mode1}}"
-          region: "{{region1}}"
-          state: "{{state1}}"
-          throughput_mode : "{{throughput_mde1}}"
+          group: security_group1
+          name : name1
+          performance_mode: mode1
+          region: region1
+          state: state1
+          throughput_mode : throughput_mde1
 
 
        register: efs

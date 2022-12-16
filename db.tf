@@ -1,34 +1,3 @@
-variable "storage" {
-	default = "10"
-}
-variable "engine-type" {
-	default = "postgres"
-}
-
-variable "engine-version" {
-	default = "13.4"
-}
-
-variable "class" {
-	default = "t2.micro"
-}
-variable "name" {
-	default = "db"
-}
-variable "username" {}
-variable "password" {}
-variable "subnet-name"{}
-variable "vpc-id" {}
-variable "azs" {}
-variable "final-snapshot" {
-    type= bool
-}
-
-variable "db-name" {
-	default = "db"
-}
-
-
 resource "aws_db_instance" "db" {
   allocated_storage    = "storage"
   engine               = "engine-type"

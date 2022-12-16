@@ -3,7 +3,7 @@ resource "aws_launch_configuration" "web" {
   image_id = "ami" 
   instance_type = "type"
   key_name = "keypair"
-  security_groups = ["security-groups" ]
+  security_groups = ["security-groups1" ]
   associate_public_ip_address = " associate_public_ip_address1"
   user_data = "${file("data.sh")}"
   lifecycle {

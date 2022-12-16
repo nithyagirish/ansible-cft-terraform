@@ -1,22 +1,5 @@
-variable "asg-name" {}
-variable "min" {}
-variable "desired" {}
-variable "max" {}
-
-variable "loadbal-id" {}
-
-variable "launch-config" {}
-
-variable "demosubnet" {
-	type = list
-}
-
-variable "asg-policy-name" {}
-
-
-
 resource "aws_autoscaling_group" "web" {
-  name = var.name
+  name = "name1"
   min_size             = "min"
   desired_capacity     = "desired"
   max_size             = "max"
@@ -40,7 +23,7 @@ resource "aws_autoscaling_group" "web" {
   }
 tag {
     key                 = "Name"
-    value               = "Name1"
+    value               = "name1"
     propagate_at_launch = true
   }
 }

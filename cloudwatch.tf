@@ -1,26 +1,6 @@
-variable "name" {
-	default = "cloudwatch-alarm"
-}
-variable "operator" {
-	default = "GreaterThanOrEqualToThreshold"
-}
-
-variable "evaluation-period" {}
-
-variable "metric-name" {}
-variable "namespace1" {}
-variable "period1" {}
-variable "statistics1" {}
-variable "thresholed1" {}
-variable "description" {}
-
-
-
-
-
 
 resource "aws_cloudwatch_metric_alarm" "ec2-alarm" {
-  alarm_name                = "name"
+  alarm_name                = "name1"
   comparison_operator       = "operator"
   evaluation_periods        = "evaluation-period"
   metric_name               = "metric-name"
