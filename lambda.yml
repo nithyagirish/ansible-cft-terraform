@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Lambda function with cfn-response.
+Resources:
+  primer:
+    Type: AWS::Lambda::Function
+    Properties:
+      Runtime: "runtime1"
+      Architectures: "Architectures1"
+      Role: "role1"
+      Handler: "file_name"
+      Code:
+       S3Bucket: "bucket1"
+       S3Key: "key1"
+      Description: Invoke a function during stack creation.
+      TracingConfig:
+        Mode: Active
