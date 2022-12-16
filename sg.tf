@@ -21,7 +21,7 @@ variable "port_values" {
 
 resource "aws_security_group" "main" {
    count = length(var.port_values)
-   name   = "security"
+   name   = "security_name"
    vpc_id = "vpc_id1"
    ingress {
        from_port   = element(var.port_values,count.index)
