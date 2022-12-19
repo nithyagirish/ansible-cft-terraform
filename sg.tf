@@ -5,11 +5,10 @@ variable "port_values" {
 
 resource "aws_security_group" "main" {
    vpc_id = "vpc_id1"
-   count = length(var.port_values)
-   for_each = element(var.port_values,count.index)
+   for_each = var.port_values
    ingress {
-       from_port   = element(var.port_values,count.index)
-       to_port     = element(var.port_values,count.index)
+       from_port   = var.port_values
+       to_port     = var.port_values
        protocol    = "tcp"
        cidr_blocks = ["0.0.0.0/0"]
 
