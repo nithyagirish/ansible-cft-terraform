@@ -4,6 +4,7 @@ variable "port_values" {
 }
 
 resource "aws_security_group" "main" {
+   name = "name1"
    vpc_id = "vpc_id1"
    count = length(var.port_values)
    ingress {
