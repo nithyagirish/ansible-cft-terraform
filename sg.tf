@@ -5,7 +5,7 @@ variable "port_values" {
 
 resource "aws_security_group" "main" {
    vpc_id = "vpc_id1"
-   dynamic ingress {
+   dynamic "ingress" {
      for_each = var.port_values
      content {
        from_port   = var.port_values
