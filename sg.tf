@@ -4,9 +4,9 @@ variable "port_values" {
 }
 
 resource "aws_security_group" "main" {
-   name = "name1"
    vpc_id = "vpc_id1"
    count = length(var.port_values)
+   for_each = element(var.port_values,count.index)
    ingress {
        from_port   = element(var.port_values,count.index)
        to_port     = element(var.port_values,count.index)
