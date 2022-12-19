@@ -1,7 +1,7 @@
 resource "aws_launch_configuration" "web" {
   name_prefix = "launch-configuration-name"
   image_id = "ami" 
-  instance_type = "type"
+  instance_type = "type1"
   key_name = "keypair"
   security_groups = ["security-groups1" ]
   associate_public_ip_address = " associate_public_ip_address1"
