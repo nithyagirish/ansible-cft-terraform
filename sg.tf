@@ -8,8 +8,8 @@ resource "aws_security_group" "main" {
    dynamic "ingress" {
      for_each = var.port_values
      content {
-       from_port   = ingress.var.port_values
-       to_port     = ingress.var.port_values
+       from_port   = each.value
+       to_port     = each.value
        protocol    = "tcp"
        cidr_blocks = ["0.0.0.0/0"]
 
