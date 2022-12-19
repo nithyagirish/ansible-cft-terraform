@@ -5,6 +5,16 @@ variable "port_values" {
 
 resource "aws_security_group" "main" {
    vpc_id = "vpc_id1"
+   
+   for_each = toset(var.port_values)
+   ingress {
+       from_port   = each.value
+       to_port     = each.value
+       protocol    = "tcp"
+       cidr_blocks = ["0.0.0.0/0"]
+
+   }
+     
    egress {
     from_port        = 0
     to_port          = 0
@@ -18,14 +28,5 @@ resource "aws_security_group" "main" {
       Name = "AWS security group dynamic block"
    }
    
-   for_each = toset(var.port_values)
-   ingress {
-       from_port   = each.value
-       to_port     = each.value
-       protocol    = "tcp"
-       cidr_blocks = ["0.0.0.0/0"]
-
-   }
-     
    
 }
