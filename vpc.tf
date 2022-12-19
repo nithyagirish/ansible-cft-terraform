@@ -1,30 +1,22 @@
-variable "aws_region" {
-	default = "us-east-1"
-}
-
-variable "vpc_cidr" {
-	default = "10.20.0.0/16"
-}
-
 variable "public_subnets_cidr" {
 	type = list
-	default = $public
+	default = public_cidrs
 }
 
 variable "private_subnets_cidr" {
 	type = list
-	default = "$cidr"
+	default = private_cidrs
 }
 
 variable "azs" {
 	type = list
-	default = ["us-east-1a", "us-east-1b"]
+	default = azs_list
 }
 
 
 # VPC
 resource "aws_vpc" "terra_vpc" {
-  cidr_block       = var.vpc_cidr
+  cidr_block       = "vpc_cidr1"
   tags = {
     Name = "vpc-name"
   }
