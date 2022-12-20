@@ -8,15 +8,13 @@
        ec2:
           name: name1
           instance_type: instance_type1
-          security_group: security_group1
-          network:
-            assign_public_ip: assign_public_ip1
+          group: security_group1
+          assign_public_ip: assign_public_ip1
           region: region1
           key_name: keypair1
-          image_id: ami_id1
+          image: ami_id1
           vpc_subnet_id: vpc_subnet_id1
           count : count1
-          state: present
           wait: wait1
        register: ec2
 
