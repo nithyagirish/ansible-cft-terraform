@@ -2,7 +2,7 @@ resource "aws_db_instance" "db" {
   allocated_storage    = "allocated_storage1"
   availability_zone= "availability_zone1"
   backup_window = "backup_window1"
-  vpc_security_group_ids= "vpc_security_group_ids1"
+  vpc_security_group_ids= ["vpc_security_group_ids1"]
   engine               = "engine_type"
   engine_version       = "engine_version1"
   instance_class       = "instance_class1"
