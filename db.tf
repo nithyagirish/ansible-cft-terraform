@@ -4,7 +4,7 @@ resource "aws_db_instance" "db" {
   backup_window = "backup_window1"
   vpc_security_group_ids= "vpc_security_group_ids1"
   engine               = "engine_type"
-  engine_version       = "engine-version"
+  engine_version       = "engine_version1"
   instance_class       = "instance_class1"
   name                 = "dbname"
   username             = "dbusername"
