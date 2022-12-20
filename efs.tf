@@ -3,14 +3,13 @@ resource "aws_efs_file_system" "efs" {
    performance_mode = "performance_mode1"
    throughput_mode = "throughput_mode1"
    encrypted = "encryption"
+   availability_zone_name= "availability_zone_name1"
+   lifecycle_policy {
+    transition_to_ia = "transition_to_ia1"
+  }
    tags = {
       Name = "Efs-name"
    }
  }
 
 
-resource "aws_efs_mount_target"  "efs-mt" {
-   file_system_id  = aws_efs_file_system.efs.id
-   subnet_id = "subnet-id"
-   security_groups = "sg-id"
- }
