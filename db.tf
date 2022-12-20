@@ -1,5 +1,4 @@
 resource "aws_db_subnet_group" "db-subnet" {
-name = "DB subnet group"
 subnet_ids = ["subnet_id1", "subnet_id2"]
 }
 
