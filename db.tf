@@ -13,7 +13,7 @@ resource "aws_db_instance" "db" {
   vpc_security_group_ids = "vpc_id"
   deletion_protection= "deletion_protection1"
   skip_final_snapshot       = "fianl_snapshot"
-  max_allocated_storage = "max_allocated_storage1"
+  max_allocated_storage = "max_storage1"
   multi_az = "multi_az1"
   storage_type= "storage_type1"
   
