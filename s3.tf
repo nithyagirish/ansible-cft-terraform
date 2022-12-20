@@ -6,6 +6,7 @@ resource "aws_s3_bucket" "temp" {
     versioning {
       enabled = "enable"
   }
+    force_destroy= "force_destroy1"
 
 
 }
