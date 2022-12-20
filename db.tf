@@ -9,7 +9,6 @@ resource "aws_db_instance" "db" {
   name                 = "dbname"
   username             = "dbusername"
   password             = "dbpassword"
-  db_subnet_group_name = "subnet_name"
   deletion_protection= "deletion_protection1"
   skip_final_snapshot       = "fianl_snapshot"
   max_allocated_storage = "max_storage1"
