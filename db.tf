@@ -11,7 +11,6 @@ resource "aws_db_instance" "db" {
   password             = "dbpassword"
   deletion_protection= "deletion_protection1"
   skip_final_snapshot       = "fianl_snapshot"
-  multi_az = "multi_az1"
   storage_type= "storage_type1"
   
   tags = {
