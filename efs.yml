@@ -4,14 +4,14 @@
   gather_facts: False
   
   tasks:
-     - name: Task # 1 Launch the new EC2 Instance
+     - name: Task # 1 Create EFS file system
        efs:
-          group: security_group1
           name : name1
+          encrypt : encrypt1
           performance_mode: mode1
           region: region1
-          state: state1
-          throughput_mode : throughput_mde1
+          state: present
+          transition_to_ia: transition_to_ia1
 
 
        register: efs
