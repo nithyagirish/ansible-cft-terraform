@@ -1,3 +1,7 @@
+resource "aws_db_subnet_group" "db-subnet" {
+name = "DB subnet group"
+subnet_ids = ["subnet_id1", "subnet_id2"]}
+
 resource "aws_db_instance" "db" {
   allocated_storage    = "allocated_storage1"
   availability_zone= "availability_zone1"
@@ -6,7 +10,8 @@ resource "aws_db_instance" "db" {
   engine               = "engine_type"
   engine_version       = "engine_version1"
   instance_class       = "instance_class1"
-  name                 = "dbname"
+  db_subnet_group_name =  "${aws_db_subnet_group.db-subnet.name}"
+  db_name                = "dbname"
   username             = "dbusername"
   password             = "dbpassword"
   deletion_protection= "deletion_protection1"
