@@ -4,7 +4,6 @@ subnet_ids = ["subnet_id1", "subnet_id2"]}
 
 resource "aws_db_instance" "db" {
   allocated_storage    = "allocated_storage1"
-  availability_zone= "availability_zone1"
   backup_window = "backup_window1"
   vpc_security_group_ids= ["vpc_security_group_ids1"]
   engine               = "engine_type"
