@@ -14,11 +14,10 @@
           region: region1
           key_name: keypair1
           image_id: ami_id1
-          region: region1
           vpc_subnet_id: vpc_subnet_id1
           count : count1
           state: present
-          wait: true
+          wait: wait1
        register: ec2
 
         
