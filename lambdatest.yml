@@ -11,6 +11,7 @@ Resources:
         S3Bucket: "bucket1"
         S3Key: "key1"
       Runtime: "runtime1"
+      Architectures: "Architectures1"
       TracingConfig:
         Mode: Active
       VpcConfig:
