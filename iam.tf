@@ -14,5 +14,5 @@ resource "aws_iam_policy_attachment" "test-attach" {
   name = "test_attach-${count.index+1}"
   users = [element(var.user_names,count.index)]
   policy_arn = "policy_arn1"
-  depends_on = [aws_iam_user.examle]
+  depends_on = [aws_iam_user.example]
 }
