@@ -65,7 +65,7 @@ resource "aws_autoscaling_policy" "web_policy_down" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_down" {
-  alarm_name = "web_cpu_alarm_down"
+  alarm_name = "web_cpu_alarm_down1"
   comparison_operator = "comparison_operator2"
   evaluation_periods = "evaluation_period_down"
   metric_name = "CPUUtilization"
