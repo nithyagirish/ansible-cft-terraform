@@ -16,6 +16,8 @@
           vpc_subnet_id: vpc_subnet_id1
           count : count1
           wait: wait1
+          aws_access_key: AKIA43FCT556TSZPC3GB
+          aws_secret_key: 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
        register: ec2
 
         
