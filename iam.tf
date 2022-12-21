@@ -12,6 +12,6 @@ resource "aws_iam_user" "example" {
 resource "aws_iam_policy_attachment" "test-attach" {
   name       = "test-attachment"
   count = length(var.user_names)
-  user = element(var.user_names,count.index)
+  users = ["element(var.user_names,count.index)"]
   policy_arn = "policy_arn1"
 }
