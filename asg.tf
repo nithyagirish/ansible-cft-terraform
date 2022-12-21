@@ -20,7 +20,7 @@ resource "aws_autoscaling_group" "web" {
   lifecycle {
     create_before_destroy = true
   }
-tag {
+  tag {
     key                 = "Name"
     value               = "name1"
     propagate_at_launch = true
@@ -37,6 +37,7 @@ resource "aws_autoscaling_policy" "web_policy_up" {
   adjustment_type = "ChangeInCapacity"
   cooldown = 300
   autoscaling_group_name = "${aws_autoscaling_group.web.name}"
+}
 
 
 resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_up" {
