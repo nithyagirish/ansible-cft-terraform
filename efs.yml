@@ -11,7 +11,6 @@
           performance_mode: mode1
           region: region1
           state: present
-          transition_to_ia: transition_to_ia1
 
 
        register: efs
