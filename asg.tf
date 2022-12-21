@@ -1,8 +1,8 @@
 resource "aws_autoscaling_group" "web" {
   name = "name1"
-  min_size             = "min"
-  desired_capacity     = "desired"
-  max_size             = "max"
+  min_size             = "min1"
+  desired_capacity     = "desired1"
+  max_size             = "max1"
   
   health_check_type    = "health_check_type1"
   launch_configuration = "launch_config"
