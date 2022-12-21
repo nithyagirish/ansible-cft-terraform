@@ -5,8 +5,7 @@ resource "aws_autoscaling_group" "web" {
   max_size             = "max"
   
   health_check_type    = " health_check_type1"
-  load_balancers = "loadbal-id"
-  launch_configuration = "launch-config"
+  launch_configuration = "launch_config"
   enabled_metrics = [
     "GroupMinSize",
     "GroupMaxSize",
@@ -15,7 +14,7 @@ resource "aws_autoscaling_group" "web" {
     "GroupTotalInstances"
   ]
   metrics_granularity = "1Minute"
-  vpc_zone_identifier  = "demosubnet"
+  vpc_zone_identifier  = demosubnet
 
 # Required to redeploy without an outage.
   lifecycle {
@@ -33,7 +32,7 @@ tag {
 
 
 resource "aws_autoscaling_policy" "web_policy_up" {
-  name = "asg-policy-name"
+  name = "asg_up_policy"
   scaling_adjustment = 1
   adjustment_type = "ChangeInCapacity"
   cooldown = 300
@@ -41,13 +40,13 @@ resource "aws_autoscaling_policy" "web_policy_up" {
 
 
 resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_up" {
-  alarm_name = "web_policy_up1"
+  alarm_name = "web_cpu_alarm_up1"
   comparison_operator = "comparison_operator1"
   evaluation_periods = "evaluation_period_up"
   metric_name = "metric"
   namespace = "namespace1"
   period = "period_up"
-  statistic = "Average"
+  statistic = "Average1"
   threshold = "threshold_up"
   dimensions = {
      AutoScalingGroupName = "${aws_autoscaling_group.web.name}"
@@ -58,7 +57,7 @@ resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_up" {
 
 
 resource "aws_autoscaling_policy" "web_policy_down" {
-  name = "web_policy_down1"
+  name = "asg_down_policy"
   scaling_adjustment = -1
   adjustment_type = "ChangeInCapacity"
   cooldown = 300
