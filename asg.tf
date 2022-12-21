@@ -4,7 +4,7 @@ resource "aws_autoscaling_group" "web" {
   desired_capacity     = "desired"
   max_size             = "max"
   
-  health_check_type    = " health_check_type1"
+  health_check_type    = "health_check_type1"
   launch_configuration = "launch_config"
   enabled_metrics = [
     "GroupMinSize",
