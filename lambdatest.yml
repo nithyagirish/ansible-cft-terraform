@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: lambda function.
+Resources:
+  Function:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: FunctionName1
+      Handler: index.handler
+      Role: "role1"
+      Code:
+        S3Bucket: "bucket1"
+        S3Key: "key1"
+      Runtime: "runtime1"
+      TracingConfig:
+        Mode: Active
+      VpcConfig:
+        SecurityGroupIds:
+          - SecurityGroupIds1
+        SubnetIds:
+          - SubnetIds1
+          - SubnetIds2
