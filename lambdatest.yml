@@ -6,11 +6,11 @@ Resources:
     Properties:
       FunctionName: FunctionName1
       Handler: index.handler
-      Role: "role1"
+      Role: role1
       Code:
-        S3Bucket: "bucket1"
-        S3Key: "key1"
-      Runtime: "runtime1"
+        S3Bucket: bucket1
+        S3Key: key1
+      Runtime: runtime1
       TracingConfig:
         Mode: Active
       VpcConfig:
