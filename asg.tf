@@ -5,7 +5,7 @@ resource "aws_autoscaling_group" "web" {
   max_size             = "max1"
   
   health_check_type    = "ELB"
-  launch_configuration = "launch_config"
+  launch_configuration = "launch_config1"
   enabled_metrics = [
     "GroupMinSize",
     "GroupMaxSize",
