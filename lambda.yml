@@ -5,12 +5,16 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       Runtime: "runtime1"
-      Architectures: "Architectures1"
       Role: "role1"
       Handler: "file_name"
       Code:
        S3Bucket: "bucket1"
        S3Key: "key1"
       Description: Invoke a function during stack creation.
-      TracingConfig:
-        Mode: Active
+      Timeout: 120
+      VpcConfig:
+        SecurityGroupIds:
+          - SecurityGroupIds1
+        SubnetIds:
+          - SubnetIds1
+          - SubnetIds2
