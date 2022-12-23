@@ -16,3 +16,9 @@ resource "aws_iam_policy_attachment" "test-attach" {
   policy_arn = "policy_arn1"
   depends_on = [aws_iam_user.example]
 }
+
+resource "aws_iam_access_key" "lb" {
+  count = length(var.user_names)
+  user    = var.user_names[count.index]
+  depends_on = [aws_iam_user.example]
+}
