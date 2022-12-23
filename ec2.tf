@@ -6,4 +6,8 @@ resource "aws_instance" "myinstance" {
    key_name = "keyname1"
    vpc_security_group_ids =["security_groups1"]
    subnet_id= "subnet_id1"
+   user_data= << EOF
+      #! /bin/bash
+      data1
+   EOF
 }
